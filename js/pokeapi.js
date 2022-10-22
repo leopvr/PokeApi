@@ -30,7 +30,7 @@ async function loadPokes(url) {
 
             if (!response.ok) throw {status:response.status, statusText: response.statusText}
 
-            $template += `<figure>
+            $template += `<div>
             <div class="card" style="width: 18rem; background-color: rgb(0 99 177); box-shadow: 1px 5px 35px 0px #000; margin-top: 10px; margin-bottom: 10px; margin-right: 20px; margin-left: 20px">
             <img class="card-img-top" src="${pokemon.sprites.front_default}"></img>
             <div class="card-body bg-dark">
@@ -38,7 +38,7 @@ async function loadPokes(url) {
             <p class="card-text" id="txtPokemon"></p>
             <a href="https://pokeapi.co/api/v2/pokemon/${pokemon.id}" class="btn btn-primary">More details...</a></div>
             </div>
-            </figure>`;
+            </div>`;
                         
         } catch (err) {
 
@@ -67,7 +67,7 @@ function buscarPokemon(){
         mainPoke.innerHTML = "";
         let pokemon = document.createElement("div");
         pokemon.className = "pokemon";
-        pokemon.innerHTML = `<figure>
+        pokemon.innerHTML = `<div>
         <div class="card" style="width: 18rem; background-color: rgb(0 99 177); box-shadow: 1px 5px 35px 0px #000; margin-top: 10px; margin-bottom: 10px; margin-right: 20px; margin-left: 20px">
         <img class="card-img-top" src="${data.sprites.front_default}"></img>
         <div class="card-body bg-dark">
@@ -75,7 +75,7 @@ function buscarPokemon(){
         <p class="card-text" id="txtPokemon"></p>
         <a href="https://pokeapi.co/api/v2/pokemon/${data.id}" class="btn btn-primary">More details...</a></div>
         </div>
-        </figure>`
+        </div>`
         document.getElementById("cuerpoPoke").appendChild(pokemon);
       });
 
